@@ -1,0 +1,26 @@
+{
+  "name": "fis3-preprocessor-css2js",
+  "version": "0.1.0",
+  "description": "resouce loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fex-team/fis3-preprocessor-css2js.git"
+  },
+  "keywords": [
+    "fis3",
+    "loader"
+  ],
+  "author": "fis",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/fex-team/fis3-preprocessor-css2js/issues"
+  },
+  "homepage": "https://github.com/fex-team/fis3-preprocessor-css2js",
+  "dependencies": {
+    "tinytim": "^0.1.1"
+  }
+}

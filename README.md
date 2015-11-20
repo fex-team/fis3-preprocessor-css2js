@@ -1,6 +1,6 @@
 fis3-preprocessor-css2js
 ===============
-讲 css 解析成 js 文件，用 js 的方式去加载。
+将 css 解析成 js 文件，用 js 的方式去加载。
 
 只支持 fis3
 

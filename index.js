@@ -11,6 +11,7 @@ module.exports = function(content, file, conf) {
 
   cssContent = cssContent.replace(/[\n|\r]/g, " ");
   cssContent = cssContent.replace(/'/g, '\"');
+  cssContent = cssContent.replace(/\\/g, "\\\\");
   cssContent = "'" + cssContent + "'";
 
   var injectCssFn = tinytim.render(conf.templates.css_injector, {});

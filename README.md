@@ -1,5 +1,8 @@
 fis3-preprocessor-css2js
 ===============
+
+【推荐直接使用 [fis3-preprocessor-js-require-css](https://github.com/fex-team/fis3-preprocessor-js-require-css) 已包含此插件功能】
+
 将 css 解析成 js 文件，用 js 的方式去加载。
 
 只支持 fis3

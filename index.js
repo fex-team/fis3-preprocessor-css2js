@@ -1,4 +1,20 @@
 var tinytim = require('tinytim');
+var assign = require('object-assign');
+
+function processCss(cssContent, conf) {
+  conf = assign({}, module.exports.defaultOptions, conf || {});
+
+  cssContent = cssContent.replace(/[\n|\r]/g, " ");
+  cssContent = cssContent.replace(/'/g, '\"');
+  cssContent = cssContent.replace(/\\/g, "\\\\");
+  cssContent = "'" + cssContent + "'";
+
+  var injectCssFn = tinytim.render(conf.templates.css_injector, {});
+  return tinytim.render(conf.templates[conf.template || 'requirejs_runner'], {
+    cssContent: cssContent,
+    injectCssFn: injectCssFn
+  });
+}
 
 module.exports = function(content, file, conf) {
   // 先走一次 css 处理，
@@ -9,19 +25,10 @@ module.exports = function(content, file, conf) {
     isCssLike: true
   });
 
-  cssContent = cssContent.replace(/[\n|\r]/g, " ");
-  cssContent = cssContent.replace(/'/g, '\"');
-  cssContent = cssContent.replace(/\\/g, "\\\\");
-  cssContent = "'" + cssContent + "'";
-
-  var injectCssFn = tinytim.render(conf.templates.css_injector, {});
-  content = tinytim.render(conf.templates[conf.template || 'requirejs_runner'], {
-    cssContent: cssContent, 
-    injectCssFn: injectCssFn
-  });
-
-  return content;
+  return processCss(cssContent, conf);
 };
+
+module.exports.processCss = processCss;
 
 const CSS_INJECTOR = "(function (css) {\n" +
 "    var headEl = document.getElementsByTagName('head')[0];\n" +

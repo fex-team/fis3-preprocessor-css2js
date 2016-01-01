@@ -1,6 +1,6 @@
 {
   "name": "fis3-preprocessor-css2js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "resouce loader",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/fex-team/fis3-preprocessor-css2js",
   "dependencies": {
+    "object-assign": "^4.0.1",
     "tinytim": "^0.1.1"
   }
 }
